@@ -1,0 +1,14 @@
+.img_style{
+    height: 200px;
+    float: left;
+}
+.content{
+    margin-left: 200px;
+}
+.parent{
+    background: #e7e7e7;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 257px;
+}

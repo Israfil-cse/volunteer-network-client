@@ -1,0 +1,17 @@
+.btnStyle{
+    width: 93%;
+    height: 41px;
+    border: 1px solid black;
+    border-radius: 18px;
+    margin-bottom: 40px;
+    margin-left: 15px;
+
+}
+.btnStyle img{
+    height: 25px;
+    margin-right: 10px;
+}
+button{
+    border: none;
+    background: none;
+}
