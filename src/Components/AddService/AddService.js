@@ -28,7 +28,7 @@ const AddService = () => {
         formData.append('file', fileStorage);
         formData.append('name', serviceinfo.name);
 
-        fetch('http://localhost:4000/addService', {
+        fetch('https://peaceful-reaches-79554.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })

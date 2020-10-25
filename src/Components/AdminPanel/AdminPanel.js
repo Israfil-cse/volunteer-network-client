@@ -9,7 +9,7 @@ const AdminPanel = () => {
     const [admin, setAdmin] = useState(false);
     
     useEffect(() => {
-        fetch(`http://localhost:4000/checkAdmin?email=${loggedInUser.email}`)
+        fetch(`https://peaceful-reaches-79554.herokuapp.com/checkAdmin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 if (data.admin === true) {
