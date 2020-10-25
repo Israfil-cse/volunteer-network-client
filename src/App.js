@@ -5,13 +5,15 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import AdminDataLoad from './Components/Admin/AdminDataLoad';
+import Register from './Components/Registers/Register';
 import CategoryDetails from './Components/CategoryDetails/CategoryDetails';
 import HomePage from './Components/HomePage/HomePage';
 import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
 import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
 import UserInfoData from './Components/UserInformation/UserInfoData';
+import AddService from './Components/AddService/AddService';
+import AdminPanel from './Components/AdminPanel/AdminPanel';
 
 export const UserContext = createContext();
 
@@ -36,8 +38,14 @@ const App = () => {
           <Route path="/userinfo">
           <UserInfoData></UserInfoData>
           </Route>
-          <Route path="/admin">
-            <AdminDataLoad></AdminDataLoad>
+          <PrivetRoute path="/register">
+            <Register></Register>
+          </PrivetRoute>
+          <PrivetRoute path="/adminPanel">
+            <AdminPanel></AdminPanel>
+          </PrivetRoute>
+          <Route path="/addService">
+            <AddService></AddService>
           </Route>
           <Route path="*">
             <NotFound></NotFound>

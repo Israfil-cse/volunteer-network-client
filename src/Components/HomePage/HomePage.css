@@ -1,5 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.homePage{
+    background-image : url('../../logos/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
 
-
+}
 form{
     width: 350px;
     margin: 0 auto;

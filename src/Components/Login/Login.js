@@ -55,7 +55,7 @@ const Login = () => {
                 <div className="parentForms">
                     <h3 className="text-center my-4">Login</h3>
                     <div className="btnStyle bg-primary d-flex justify-content-center">
-                        <button onClick={handleGoogleSignIn}> <img src={glogo} alt="" />Continue With Google</button>
+                        <button onClick={handleGoogleSignIn}> <img className="img-fluid" src={glogo} alt="" /><span className="googletext">Continue With Google</span></button>
                     </div>
                     <h6 className="text-center">Don't have an account? <a href="http://">Create a new account</a></h6>
 
