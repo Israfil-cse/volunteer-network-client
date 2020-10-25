@@ -1,10 +1,9 @@
 .logo{
     height: 100px;
 }
-.parentForm{
-    width: 40%;
-    border: 1px solid black;
-    margin: 0 auto;
+.formBorder{
+    border: 1px solid gray;
+    padding: 20px;
 }
 form input{
     border: none;
@@ -14,6 +13,7 @@ form input{
 .inputStyle{
     border-bottom: 1px solid gray;
     margin-bottom: 25px;
+    width: 100%;
 }
 .submitBtn{
     padding: 10px;

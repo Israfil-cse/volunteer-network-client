@@ -9,48 +9,61 @@ import glogo from '../../logos/google.png';
 import './Login.css';
 
 const Login = () => {
-    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
+
+
+    const setUserToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+            .then(function (idToken) {
+                sessionStorage.getItem('token', idToken)
+            }).catch(function (error) {
+                // Handle error
+            });
+    }
 
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
     }
     const handleGoogleSignIn = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function(result) {
+        firebase.auth().signInWithPopup(provider).then(function (result) {
             // The signed-in user info.
-            const {displayName, email} = result.user;
-            const signedInUser = {name: displayName, email}
+            const { displayName, email } = result.user;
+            const signedInUser = { name: displayName, email };
             setLoggedInUser(signedInUser);
-            history.replace(from)
+            setUserToken();
+            history.replace(from);
 
-          }).catch(function(error) {
+
+        }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-           console.log(errorCode, errorMessage);
+            console.log(errorCode, errorMessage);
 
-          });
+        });
     }
     return (
-       <div>
+        <div>
             <div className="container">
-        <figure className=" d-flex justify-content-center my-5">
-            <img className="logo" src={logo} alt=""/>
-        </figure>
-        <div className="parentForm">
-            <h3 className="text-center my-4">Login</h3>
-            <div className="btnStyle d-flex justify-content-center">
-            <button onClick={handleGoogleSignIn}> <img src={glogo} alt=""/>Continue With Google</button>
+                <figure className=" d-flex justify-content-center my-5">
+                    <img className="logo" src={logo} alt="" />
+                </figure>
+                <div className="parentForms">
+                    <h3 className="text-center my-4">Login</h3>
+                    <div className="btnStyle bg-primary d-flex justify-content-center">
+                        <button onClick={handleGoogleSignIn}> <img src={glogo} alt="" />Continue With Google</button>
+                    </div>
+                    <h6 className="text-center">Don't have an account? <a href="http://">Create a new account</a></h6>
+
+                </div>
             </div>
         </div>
-    </div>
-    <h6 className="text-center">Don't have an account? <a href="#">Create a new account</a></h6>
-       </div>
-    
-        
+
+
     );
 };
 

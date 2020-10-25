@@ -8,11 +8,11 @@ const Category = (props) => {
     const {_id, name, image} = allItems;
 
     return (
-        <div className="col-md-3">
+        <div className="col-md-3 col-sm-6">
             <Link to={`/CategoryDetails/${_id}`}>
             <Card className="my-5">
                 <Card.Img variant="top" src={image} />
-                <Card.Footer>
+                <Card.Footer style={{background: props.color, 'color':"white", height: "65px"}}>
                   {name}
                 </Card.Footer>
             </Card>

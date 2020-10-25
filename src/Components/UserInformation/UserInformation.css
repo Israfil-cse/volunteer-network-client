@@ -12,3 +12,12 @@
     border-radius: 10px;
     height: 257px;
 }
+@media only screen and (max-width:479px){
+   .content h3{
+        font-size: 20px;
+    }
+    .content h5{
+        font-size: 13px;
+    }
+}
+

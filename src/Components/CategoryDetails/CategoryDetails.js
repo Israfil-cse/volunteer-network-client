@@ -50,9 +50,8 @@ const CategoryDetails = () => {
             <figure className=" d-flex justify-content-center my-5">
                 <img className="logo" src={logo} alt="" />
             </figure>
-            <div className="parentForm">
                 <h3 className="text-center my-4">Register as a volunteer</h3>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form className="formBorder" onSubmit={handleSubmit(onSubmit)}>
                     <div className="inputStyle">
                         <input name="name" defaultValue={loggedInUser.name} ref={register({ required: true })} placeholder="Full Name" />
                         {errors.name && <span className="error">name is required</span>}
@@ -77,7 +76,7 @@ const CategoryDetails = () => {
                         <input className="submitBtn bg-primary my-3"type="submit" />
                     </div>
                 </form>
-            </div>
+
         </div>
     );
 };

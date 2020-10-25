@@ -4,10 +4,11 @@ import './HomePage.css'
 
 import Category from '../Category/Category';
 import Header from '../Header/Header';
+import randomColor from 'randomcolor';
 
 const HomePage = () => {
     const [items, setItems] = useState([]);
-
+    console.log(randomColor());
     // // fakeData load to reall database
     // const handleAddItemDb = () => {
     //     fetch('http://localhost:4000/addItem', {
@@ -39,7 +40,7 @@ const HomePage = () => {
         {/* data maping */}
             <div className="row">
                 {
-                    items.map(item => <Category items={item} key={item.id}></Category>)
+                    items.map(item => <Category color={randomColor()} items={item} key={item.id}></Category>)
                 }
             </div>
 

@@ -1,8 +1,10 @@
 .logo{
-    
     height: 60px;
 }
 .nav_Item{
     margin: 5px;
     font-size: 20px;
+}
+.btn{
+    width: 150px;
 }

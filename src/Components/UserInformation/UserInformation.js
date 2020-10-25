@@ -8,19 +8,7 @@ const UserInformation = (props) => {
 
 
 
-    const handleDelete = (id) => {
-        fetch(`https://peaceful-reaches-79554.herokuapp.com/delete/${id}`, {
-            method: 'DELETE',
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log('delete success');
-
-            })
-            console.log('select item deleted', id)
-
-        
-    }
+   
     return (
             <div className="col-md-6">
                 <div className="parent">
@@ -35,7 +23,7 @@ const UserInformation = (props) => {
                         <br />
                         <h5>{new Date(user2.date).toDateString('dd/mm/yy')}</h5>
                         <br />
-                        <button onClick={() => handleDelete(props.user._id)}>Cancle</button>
+                        <button onClick={() => props.handleDelete(props.user._id)}>Cancle</button>
 
                     </div>
                 </div>
